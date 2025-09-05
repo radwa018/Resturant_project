@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card p-3 shadow">
+    <h2>Customer Details</h2>
+    <p><strong>Name:</strong> {{ customer.name }}</p>
+    <p><strong>Email:</strong> {{ customer.email or "-" }}</p>
+    <p><strong>Phone:</strong> {{ customer.phone }}</p>
+
+    <hr>
+    <h4>Orders:</h4>
+    <ul>
+        {% for order in customer.orders %}
+            <li>
+                <a href="/orders/{{ order.id }}">Order #{{ order.id }}</a> 
+                ({{ order.created_at.strftime('%Y-%m-%d %H:%M') }})
+            </li>
+        {% else %}
+            <li>No orders for this customer.</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

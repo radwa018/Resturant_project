@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="card p-3 shadow">
+    <h2>Add Items to Order #{{ order.id }}</h2>
+
+    <form method="POST">
+        <div class="mb-3">
+            <label for="item" class="form-label">Select Item</label>
+            <select name="item_id" id="item" class="form-control" required>
+                {% for item in items %}
+                    <option value="{{ item.id }}">{{ item.name }} - ${{ item.price }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="quantity" class="form-label">Quantity</label>
+            <input type="number" name="quantity" id="quantity" class="form-control" min="1" value="1" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Add Item</button>
+        <a href="/orders/{{ order.id }}" class="btn btn-secondary">Back to Order</a>
+    </form>
+
+    <hr>
+    <h4>Current Items in this Order:</h4>
+    <ul>
+        {% for order_item in order.order_items %}
+            <li>{{ order_item.item.name }} (x{{ order_item.quantity }}) - ${{ order_item.item.price * order_item.quantity }}</li>
+        {% else %}
+            <li>No items added yet</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

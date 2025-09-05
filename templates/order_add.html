@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+  <h2>Create New Order</h2>
+  <form method="POST" action="/orders/add">
+    <div class="mb-3">
+      <label class="form-label">Customer Name</label>
+      <input type="text" name="customer_name" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Phone</label>
+      <input type="text" name="phone" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-success">Next</button>
+    <a href="/orders" class="btn btn-secondary">Cancel</a>
+  </form>
+</div>
+{% endblock %}
