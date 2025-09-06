@@ -11,4 +11,5 @@ Menu management – display, add, edit, and delete menu items.
 Order management – create and track customer orders.
 
 Customer management – store and manage customer information.
-<img width="1913" height="864" alt="readme photo" src="https://github.com/user-attachments/assets/01a3d48b-e680-48b9-a473-1dc84c54f9c2" />
+
+<img width="1920" height="927" alt="rrrdmw" src="https://github.com/user-attachments/assets/790f860b-1773-4e6f-b664-1da57bf8276d" />
